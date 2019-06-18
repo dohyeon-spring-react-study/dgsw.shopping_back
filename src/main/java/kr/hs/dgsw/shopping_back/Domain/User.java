@@ -1,10 +1,15 @@
 package kr.hs.dgsw.shopping_back.Domain;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Data
+@Getter
+@Setter
 public class User {
     private Long id; //고유 아이디
     private String account; //유저 아이디
