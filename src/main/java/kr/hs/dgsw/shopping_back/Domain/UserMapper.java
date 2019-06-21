@@ -1,5 +1,6 @@
 package kr.hs.dgsw.shopping_back.Domain;
 
+
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.HashMap;
@@ -8,5 +9,5 @@ import java.util.HashMap;
 public interface UserMapper {
 
     Long add(HashMap<String, Object> map);
-    User findById(String account);
+    User findUser(HashMap<String, Object> map);
 }

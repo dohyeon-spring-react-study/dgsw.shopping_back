@@ -29,7 +29,10 @@ public class UserServiceImpl implements  UserService {
     }
 
     @Override
-    public User findById(String account) {
-        return userMapper.findById(account);
+    public User findUser(String account, String password) {
+        HashMap map = new HashMap<String, Object>();
+        map.put("account", account);
+        map.put("password", password);
+        return userMapper.findUser(map);
     }
 }

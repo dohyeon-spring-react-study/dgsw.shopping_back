@@ -10,8 +10,8 @@
         </selectKey>
     </insert>
 
-    <select id="findById" parameterType="String" resultType="HashMap">
-        select id, name, mileage from user where account=#{account};
+    <select id="findUser" parameterType="HashMap" resultType="kr.hs.dgsw.shopping_back.Domain.User">
+        select id, name, mileage from user where account=#{account} and password=#{password};
     </select>
 
 </mapper>

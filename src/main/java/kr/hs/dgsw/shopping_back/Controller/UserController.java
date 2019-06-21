@@ -11,9 +11,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/finduser/{account}")
-    public User findById(@PathVariable String account){
-        return this.userService.findById(account);
+    @GetMapping("/finduser")
+    public User findUser(@RequestParam String account ,@RequestParam String password){
+        return this.userService.findUser(account, password);
     }
 
     @PostMapping("/adduser")
