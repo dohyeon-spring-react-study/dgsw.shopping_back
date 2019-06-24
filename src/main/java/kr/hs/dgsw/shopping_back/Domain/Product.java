@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @Data
 public class Product {
     private Long id; //상품 고유 아이디
+    private Long productId; //상위 분류 아이디
     private String category; //상위 분류
     private String lowcategory; //Sub 분류
 
