@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.shopping_back.Domain.ProductMapper">
+
+    <select id="getProduct" parameterType="String" resultType="HashMap">
+        select * from product where productId = #{productId};
+    </select>
+
+    <select id="getLowProduct" parameterType="String" resultType="HashMap">
+        select * from product where productId = #{productId} group by lowcategory;
+    </select>
+
+    <select id="getDetailProduct" parameterType="String" resultType="kr.hs.dgsw.shopping_back.Domain.Product">
+        select * from product where id = #{id};
+    </select>
+
+
+</mapper>

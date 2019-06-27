@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.shopping_back.Domain.AttachMapper">
+
+    <select id="findById" parameterType="Long" resultType="HashMap">
+        select * from attach where productId = #{id};
+    </select>
+
+    <insert id="add" parameterType="HashMap" useGeneratedKeys="true">
+        insert into attach(productId, filename, filepath) values
+        (#{productId}, #{filename}, #{filepath});
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id();
+        </selectKey>
+    </insert>
+
+
+
+</mapper>

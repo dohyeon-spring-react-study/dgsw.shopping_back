@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.hs.dgsw.shopping_back.Domain.BasketMapper">
+
+    <insert id="addBasket" parameterType="kr.hs.dgsw.shopping_back.Domain.Basket" useGeneratedKeys="true">
+        insert into basket(userId, productname, price, count) values
+        (#{userId}, #{productname}, #{price}, #{count});
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id();
+        </selectKey>
+    </insert>
+
+    <select id="findByUserId" parameterType="String" resultType="HashMap">
+        select * from basket where userId = #{userId};
+    </select>
+
+
+
+</mapper>

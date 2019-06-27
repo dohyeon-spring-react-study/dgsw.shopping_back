@@ -36,7 +36,6 @@ public class Product {
     private int normalprice; //시중가격
     private int sellprice; //판매가격
     private int mileage; //마일리지
-    private int buycount; //총 구매수량
     private LocalDateTime created; //제품 등록일
     private LocalDateTime updated;
 
