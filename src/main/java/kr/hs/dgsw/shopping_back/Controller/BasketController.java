@@ -5,6 +5,7 @@ import kr.hs.dgsw.shopping_back.Service.BasketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -23,4 +24,20 @@ public class BasketController {
     public List findByUserId(@PathVariable String userId){
         return basketService.findByUserId(userId);
     }
+
+    @PutMapping("/setcount")
+    public Long setCount(@RequestBody Basket basket){
+        return basketService.setBasket(basket);
+    }
+
+    @DeleteMapping("/deletebasket")
+    public Long deleteById(@RequestBody Basket basket){
+        return basketService.deleteById(basket);
+    }
+
+    @DeleteMapping("/deleteall/{userId}")
+    public Long deleteAll(@PathVariable Long userId){
+        return basketService.deleteAll(userId);
+    }
+
 }

@@ -1,5 +1,6 @@
 package kr.hs.dgsw.shopping_back.Domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ public class Basket {
     private String productname; //
     private int price;
     private int count;
+
     private LocalDateTime created;
     private LocalDateTime updated;
 }

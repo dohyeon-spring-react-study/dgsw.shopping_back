@@ -15,6 +15,16 @@
         select * from basket where userId = #{userId};
     </select>
 
+    <update id="setCount" parameterType="kr.hs.dgsw.shopping_back.Domain.Basket">
+        update basket set count = #{count} where id = #{id};
+    </update>
 
+    <delete id="deleteById" parameterType="kr.hs.dgsw.shopping_back.Domain.Basket">
+        delete from basket where id=#{id};
+    </delete>
+
+    <delete id="deleteAll" parameterType="Long">
+        delete from basket where userId = #{userId};
+    </delete>
 
 </mapper>

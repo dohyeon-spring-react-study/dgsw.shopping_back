@@ -11,7 +11,7 @@
     </insert>
 
     <select id="findUser" parameterType="HashMap" resultType="kr.hs.dgsw.shopping_back.Domain.User">
-        select id, name, mileage from user where account=#{account} and password=#{password};
+        select * from user where account=#{account} and password=#{password};
     </select>
 
 </mapper>

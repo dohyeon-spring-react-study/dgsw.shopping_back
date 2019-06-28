@@ -1,6 +1,6 @@
 use shoppingmall;
 
-drop table product;
+drop table comment;
 
 create table user(
   id int primary key not null auto_increment,
@@ -45,7 +45,6 @@ create table attach(
 create table comment(
   id int primary key not null auto_increment,
   productId int not null,
-  title varchar(50) not null,
   useraccount varchar(30) not null,
   content varchar(100) not null,
   created datetime default current_timestamp,

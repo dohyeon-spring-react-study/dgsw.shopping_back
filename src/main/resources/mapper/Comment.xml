@@ -7,4 +7,12 @@
         select * from comment where productId = #{productId};
     </select>
 
+    <insert id="addComment" parameterType="kr.hs.dgsw.shopping_back.Domain.Comment" useGeneratedKeys="true">
+        insert into comment(productId, useraccount, content) values
+        (#{productId}, #{useraccount}, #{content});
+        <selectKey keyProperty="id" resultType="Long">
+            select last_insert_id();
+        </selectKey>
+    </insert>
+
 </mapper>

@@ -7,4 +7,5 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
     List findByProductId(Long productId);
+    Long addComment(Comment comment);
 }
