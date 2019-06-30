@@ -16,6 +16,11 @@ public class UserController {
         return this.userService.findUser(account, password);
     }
 
+    @GetMapping("/findaccount/{account}")
+    public User findAccount(@PathVariable String account){
+        return userService.findAccount(account);
+    }
+
     @PostMapping("/adduser")
     public Long add(@RequestBody User user){
         return this.userService.add(user);

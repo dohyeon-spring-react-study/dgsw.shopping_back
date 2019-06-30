@@ -35,4 +35,9 @@ public class UserServiceImpl implements  UserService {
         map.put("password", password);
         return userMapper.findUser(map);
     }
+
+    @Override
+    public User findAccount(String account) {
+        return userMapper.findAccount(account);
+    }
 }

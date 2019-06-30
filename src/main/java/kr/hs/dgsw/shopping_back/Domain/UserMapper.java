@@ -10,4 +10,5 @@ public interface UserMapper {
 
     Long add(HashMap<String, Object> map);
     User findUser(HashMap<String, Object> map);
+    User findAccount(String account);
 }

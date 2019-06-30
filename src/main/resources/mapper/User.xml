@@ -14,4 +14,8 @@
         select * from user where account=#{account} and password=#{password};
     </select>
 
+    <select id="findAccount" parameterType="String" resultType="kr.hs.dgsw.shopping_back.Domain.User">
+        select * from user where account=#{account};
+    </select>
+
 </mapper>
